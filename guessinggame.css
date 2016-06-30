@@ -1,6 +1,5 @@
 body {
-   font-family: "Josefin Sans", Helvetica, sans-serif 
-; 
+   font-family: "Josefin Sans", Helvetica, sans-serif; 
 }
 h1 {
   text-align: center; 
@@ -40,20 +39,6 @@ input:first-child{
   padding: 1vw; 
   background: #EDEDED;
   border: 1px solid black; 
-}
-section div input{
-  display: block;
-  margin-top: 8vh; 
-  padding: 10px; 
-  font-size: 18px; 
-}
-section div p {
-  margin-top: -8vh;
-  font-size: 18px;
-}
-span{
-  font-weight: bold; 
-  font-size: 25px; 
 }
 h6 {
   font-size: 25px; 
