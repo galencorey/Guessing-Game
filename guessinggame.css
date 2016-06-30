@@ -1,6 +1,5 @@
 body {
-    background: linear-gradient(to right, hsla(5, 94%, 49%, 1),white,hsla(185, 94%, 49%, 1));
-   font-family: "Josefin Sans", Helvetica, sans-serif	
+   font-family: "Josefin Sans", Helvetica, sans-serif 
 ; 
 }
 h1 {
@@ -12,14 +11,25 @@ h1 {
 }
 .hot {
   float: left; 
+  margin-left: 2vw;
+  border: 10px solid #FF3D8B;
+  background-color: #FF80F0; 
 }
 .cold {
   float: right; 
+  margin-right: 2vw;
+  border: 10px solid #1A00FF;
+  background-color: #00E6FF; 
 }
 aside, section {
   width: 30vw;  
   text-align: center; 
   margin: 15vh auto; 
+}
+aside {
+  border: 1px solid black;
+  height: 70vh; 
+  margin-top: -5vh; 
 }
 input:first-child{
   width: 15vw; 
@@ -28,7 +38,7 @@ input:first-child{
   margin: 5vh auto 1vh auto; 
   font-size: 10vw; 
   padding: 1vw; 
-  background: none;
+  background: #EDEDED;
   border: 1px solid black; 
 }
 .adjust{
@@ -56,5 +66,8 @@ button {
 }
 button:focus, input:first-child:focus {
   outline: none; 
-  border: 5px solid #000; 
+  border: thick solid #00FF00; 
+}
+.faded {
+  opacity: 0.3; 
 }
