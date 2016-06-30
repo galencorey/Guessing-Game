@@ -1,0 +1,60 @@
+body {
+    background: linear-gradient(to right, hsla(5, 94%, 49%, 1),white,hsla(185, 94%, 49%, 1));
+   font-family: "Josefin Sans", Helvetica, sans-serif	
+; 
+}
+h1 {
+  text-align: center; 
+  font-family: "Amatic SC", cursive; 
+  margin-top: 4vh; 
+  font-size: 80px; 
+  letter-spacing: 8px;
+}
+.hot {
+  float: left; 
+}
+.cold {
+  float: right; 
+}
+aside, section {
+  width: 30vw;  
+  text-align: center; 
+  margin: 15vh auto; 
+}
+input:first-child{
+  width: 15vw; 
+  height: 15vw; 
+  display: block; 
+  margin: 5vh auto 1vh auto; 
+  font-size: 10vw; 
+  padding: 1vw; 
+  background: none;
+  border: 1px solid black; 
+}
+.adjust{
+  margin-top: 15vh; 
+  padding: 10px; 
+  font-size: 18px; 
+}
+span{
+  font-weight: bold; 
+  font-size: 20px; 
+}
+h6 {
+  font-size: 25px; 
+  margin-top: 5vh;
+}
+h2 {
+  font-size: 50px; 
+}
+button {
+  width: 4vw; 
+  height: 4vw; 
+  border: none; 
+  border-radius: 10%; 
+  font-size: 1.5vw; 
+}
+button:focus, input:first-child:focus {
+  outline: none; 
+  border: 5px solid #000; 
+}
