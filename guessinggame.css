@@ -43,11 +43,12 @@ input:first-child{
 }
 section div input{
   display: block;
-  margin-top: 10vh; 
+  margin-top: 8vh; 
   padding: 10px; 
   font-size: 18px; 
 }
 section div p {
+  margin-top: -8vh;
   font-size: 18px;
 }
 span{
