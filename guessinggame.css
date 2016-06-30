@@ -41,14 +41,18 @@ input:first-child{
   background: #EDEDED;
   border: 1px solid black; 
 }
-.adjust{
-  margin-top: 15vh; 
+section div input{
+  display: block;
+  margin-top: 10vh; 
   padding: 10px; 
   font-size: 18px; 
 }
+section div p {
+  font-size: 18px;
+}
 span{
   font-weight: bold; 
-  font-size: 20px; 
+  font-size: 25px; 
 }
 h6 {
   font-size: 25px; 
