@@ -30,12 +30,12 @@ aside {
   height: 70vh; 
   margin-top: -5vh; 
 }
-input:first-child{
+#playerGuess{
   width: 15vw; 
   height: 15vw; 
   display: block; 
   margin: 5vh auto 1vh auto; 
-  font-size: 10vw; 
+  font-size: 8vw; 
   padding: 1vw; 
   background: #EDEDED;
   border: 1px solid black; 
@@ -54,7 +54,7 @@ button {
   border-radius: 10%; 
   font-size: 1.5vw; 
 }
-button:focus, input:first-child:focus {
+button:focus, #playerGuess:focus {
   outline: none; 
   border: thick solid #00FF00; 
 }
