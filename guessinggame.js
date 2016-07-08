@@ -44,7 +44,11 @@ $(document).ready(function(){
 				$("#playerMessage").empty(); 
 				$("#playerAlert").text("You have already guessed "+ playerGuess+". "); 
 				$("#playerMessage").append(guessesremaining+" Guesses remaining."); 
-			} else{
+			} else if (playerGuess>100 || playerGuess<0) {
+				$("#playerMessage").empty(); 
+				$("#playerAlert").text("Your guess is out of range. Please select a number between 1 and 100."); 
+				$("#playerMessage").append(guessesremaining+" Guesses remaining."); 
+			} else {
 				if (guessesremaining === 0){
 					loser(); 
 				} else {

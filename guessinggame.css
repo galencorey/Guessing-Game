@@ -66,12 +66,19 @@ button {
   font-size: 1.5vw; 
   background-color: #F4DECB;
 }
-button:focus, #playerGuess:focus {
+ #playerGuess:focus {
   outline: none; 
   border: 4px solid #94618E; 
 }
-button:hover{
+button:hover, button:focus{
   background-color: #94618E;
+}
+
+#enter{
+  background-color: #adebad; 
+}
+#enter:hover, #enter:focus{
+  background-color: #85e085; 
 }
 #hintWindow{
   position: absolute;
