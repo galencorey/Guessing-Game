@@ -1,5 +1,7 @@
 body {
    font-family: "Josefin Sans", Helvetica, sans-serif; 
+   background-color: #F8EEE7; 
+   color: #49274A;
 }
 h1 {
   text-align: center; 
@@ -22,8 +24,8 @@ section {
   margin: -5vh auto 1vh auto; 
   font-size: 8vw; 
   padding: 1vw; 
-  background: #EDEDED;
-  border: 1px solid black; 
+  background: #F4DECB;
+  border: 1px solid #49274A; 
 }
 h6, #playerMessage {
   font-size: 25px; 
@@ -41,18 +43,19 @@ button {
   border: none; 
   border-radius: 10%; 
   font-size: 1.5vw; 
+  background-color: #F4DECB;
 }
 button:focus, #playerGuess:focus {
   outline: none; 
-  border: thick solid #00FF00; 
+  border: 4px solid #94618E; 
 }
 #hintWindow{
   position: absolute;
   display: none; 
   width: 15vw; 
   padding: 2vw; 
-  background-color: #00ffff; 
+  background-color: #94618E; 
   margin-top: 5px;
   margin-left: 10px;
-  border: 1px solid black; 
+  border: 1px solid #49274A; 
 }
