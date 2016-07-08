@@ -1,32 +1,25 @@
 <head> 
   <!DOCTYPE html> 
   <meta charset="UTF-8">
-  <script src="guessinggame.js"></script>
   <link rel="stylesheet" type="text/css" href="guessinggame.css">
   <link href='https://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:600' rel='stylesheet' type='text/css'>
-</head> 
-<body>
- <header> 
-  <h1>Guess  My  Number</h1> 
-  </header> 
-  <aside class = "hot faded">
-    <h2>Hot</h2> 
-    <ul class = "hotlist"></ul> 
-  </aside> 
-  <aside class = "cold faded">
-    <h2>Cold</h2> 
-    <ul class = "coldlist"></ul> 
-  </aside> 
-  <section>
-    <input id = "playerGuess" type = "number" min = 1 max = 100 autofocus>
-    <button>&#8634</button> 
-    <button>?</button>
-    <button id = "enter">&#8680</button> 
-    <h6>Guesses Remaining</h6> 
-  </section> 
-  <--I am trying two things here but neither are working-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
   <script src="guessinggame.js"></script>
+</head> 
+<body>
+  <div id = "hintWindow">
+  <p>My Number is One of the Following:</p>
+  <ul id = "hintList"></ul>
+  </div>
+ <header> 
+  <h1>Guess  My  Number</h1> 
+  </header>  
+  <section>
+    <input id = "playerGuess" type = "number" min = 1 max = 100 autofocus>
+    <button id = "restart" title ="Start Over">&#8634</button> 
+    <button id = "hintButton" title = "Get a Hint">?</button>
+    <button id = "enter" title = "Submit Guess">&#8680</button> 
+    <h6 id = "playerMessage">10 Guesses remaining.</h6> 
+  </section> 
 </body> 

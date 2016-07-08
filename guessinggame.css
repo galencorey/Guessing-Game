@@ -8,28 +8,13 @@ h1 {
   font-size: 80px; 
   letter-spacing: 8px;
 }
-.hot {
-  float: left; 
-  margin-left: 2vw;
-  border: 10px solid #FF3D8B;
-  background-color: #FF80F0; 
-}
-.cold {
-  float: right; 
-  margin-right: 2vw;
-  border: 10px solid #1A00FF;
-  background-color: #00E6FF; 
-}
-aside, section {
+
+section {
   width: 30vw;  
   text-align: center; 
   margin: 15vh auto; 
 }
-aside {
-  border: 1px solid black;
-  height: 70vh; 
-  margin-top: -5vh; 
-}
+
 #playerGuess{
   width: 15vw; 
   height: 15vw; 
@@ -58,6 +43,13 @@ button:focus, #playerGuess:focus {
   outline: none; 
   border: thick solid #00FF00; 
 }
-.faded {
-  opacity: 0.3; 
+#hintWindow{
+  position: absolute;
+  display: none; 
+  width: 15vw; 
+  padding: 2vw; 
+  background-color: #00ffff; 
+  margin-top: 5px;
+  margin-left: 10px;
+  border: 1px solid black; 
 }
