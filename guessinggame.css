@@ -16,18 +16,21 @@ section {
 }
 
 #playerGuess{
-  width: 15vw; 
-  height: 15vw; 
+  width: 18vw; 
+  height: 18vw; 
   display: block; 
-  margin: 5vh auto 1vh auto; 
+  margin: -5vh auto 1vh auto; 
   font-size: 8vw; 
   padding: 1vw; 
   background: #EDEDED;
   border: 1px solid black; 
 }
-h6 {
+h6, #playerMessage {
   font-size: 25px; 
   margin-top: 5vh;
+}
+#playerMessage {
+  text-align: left; 
 }
 h2 {
   font-size: 50px; 

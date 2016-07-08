@@ -12,35 +12,40 @@ $(document).ready(function(){
 	}
 	function lowerOrHigher() {
 		if (playerGuess<winningNumber){
-			return "Your guess is <em>lower</em> than my number. ";
+			return playerGuess+" is <em>lower</em> than my number. ";
 		} else {
-			return "Your guess is <em>higher</em> than my number. ";
+			return playerGuess+" is <em>higher</em> than my number. ";
 		}
 	}
 	function distanceFromWin() {
 		var difference = Math.abs(playerGuess - winningNumber); 
 		if (difference<10){
-			return "The difference between our numbers is <em>less than 10</em>. ";
+			return "The difference between "+playerGuess+" and my numbers is <em>less than 10</em>. ";
 		} else if (difference < 25) {
-			return "The difference between our numbers is <em>less than 25</em>. ";
+			return "The difference between "+playerGuess+" and my numbers is <em>less than 25</em>. ";
 		} else if (difference < 50) {
-			return "The difference between our numbers is <em>less than 50</em>. ";
+			return "The difference between "+playerGuess+" and my numbers is <em>less than 50</em>. ";
 		} else {
-			return "The difference between our numbers is <em>greater than 50</em>. ";
+			return "The difference between "+playerGuess+" and my numbers is <em>greater than 50</em>. ";
 		}
 	}
 	function checkGuess(){
 		if (winningNumber === playerGuess){
-			$("#playerMessage").text("Congratulations! \n I was thinking of "+ winningNumber); 
+			$("#playerAlert").text("Congratulations! \n I was thinking of "+ winningNumber +"!"); 
+			$("#playerMessage").empty(); 
 		} else {
 			if (previouslyGuessedNumbers.includes(playerGuess)){
-				$("#playerMessage").text("You have already guessed "+ playerGuess+", "+ guessesremaining+" Guesses remaining."); 
+				$("#playerMessage").empty(); 
+				$("#playerAlert").text("You have already guessed "+ playerGuess+". "); 
+				$("#playerMessage").append(guessesremaining+" Guesses remaining."); 
 			} else{
 				guessesremaining --; 
 				previouslyGuessedNumbers.push(playerGuess); 
-				$("#playerMessage").text(guessesremaining+" Guesses remaining.");
-				$("#playerMessage").prepend(lowerOrHigher());
-				$("#playerMessage").prepend(distanceFromWin()); 
+				$("#playerAlert").empty(); 
+				$("#playerMessage").empty(); 
+				$("#playerMessage").append("<li>"+lowerOrHigher()+"</li>");
+				$("#playerMessage").append("<li>"+distanceFromWin()+"</li>"); 
+				$("#playerMessage").append("<li>"+guessesremaining+" Guesses remaining.</li>");
 			}
 		}
 	}
@@ -49,7 +54,7 @@ $(document).ready(function(){
 		var hintsAvailable = 2 * guessesremaining;
 		var possibilities = [];   
 		// populate an array with that many random numbers 
-		while (possibilities.length<=hintsAvailable){
+		while (possibilities.length<hintsAvailable){
 			var newRand = Math.ceil(Math.random()*100);
 			//ensure no repeats 
 			if (newRand!==winningNumber&&!possibilities.includes(newRand)){
@@ -84,7 +89,9 @@ $(document).ready(function(){
 	}); 
 	$("#restart").click(function(){
 		guessesremaining = 10; 
-		$("#playerMessage").text("10 Guesses remaining."); 
+		$("#playerAlert").empty(); 
+		$("#playerMessage").empty(); 
+		$("#playerMessage").append("<li>10 Guesses remaining.</li>"); 
 		createNewWinningNumber();
 		$("#hintWindow").slideUp(); 
 		$("#hintList").empty(); 
