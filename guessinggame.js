@@ -49,7 +49,7 @@ $(document).ready(function(){
 				$("#playerAlert").text("Your guess is out of range. Please select a number between 1 and 100."); 
 				$("#playerMessage").append(guessesremaining+" Guesses remaining."); 
 			} else {
-				if (guessesremaining === 0){
+				if (guessesremaining === 1){
 					loser(); 
 				} else {
 					guessesremaining --; 
@@ -82,7 +82,7 @@ $(document).ready(function(){
 	}
 	function loser(){
 		$("#playerMessage").empty(); 
-		$("#playerAlert").text("You lose."); 
+		$("#playerAlert").text("Try again."); 
 		$("#playerAlert").addClass("animated hinge").one(animationEnd, function() {
             $("#playerAlert").removeClass('animated hinge');
             $("#restart").click(); 
