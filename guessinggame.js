@@ -87,6 +87,12 @@ $(document).ready(function(){
 	//Here we start actually calling functions 
 	createNewWinningNumber(); 
 
+	$("#startButton").click(function(){
+		$("#opening").addClass("animated flipOutY").one(animationEnd, function() {
+            $("main").fadeIn(); 
+       }); 
+	});
+
 	$("#enter").click(function(){
 		playerGuessSubmission(); 
 		checkGuess(); 

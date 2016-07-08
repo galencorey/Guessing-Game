@@ -3,6 +3,24 @@ body {
    background-color: #F8EEE7; 
    color: #49274A;
 }
+main {
+  display: none; 
+}
+#opening{
+  position: absolute;
+}
+#startButton{
+  width: 20vw;
+  text-align: center; 
+  background-color: #F8EEE7; 
+  text-decoration: underline;
+  font-family: "Josefin Sans", Helvetica, sans-serif; 
+  margin-left: 40vw;  
+  font-size: 25px;
+}
+#startButton:hover{
+  color: #94618E; 
+}
 h1 {
   text-align: center; 
   font-family: "Amatic SC", cursive; 
@@ -26,6 +44,8 @@ section {
   padding: 1vw; 
   background: #F8EEE7;
   border: 1px solid #49274A; 
+  font-family: "Josefin Sans", Helvetica, sans-serif; 
+  color: #49274A;
 }
 h6, #playerMessage {
   font-size: 25px; 
@@ -49,6 +69,9 @@ button {
 button:focus, #playerGuess:focus {
   outline: none; 
   border: 4px solid #94618E; 
+}
+button:hover{
+  background-color: #94618E;
 }
 #hintWindow{
   position: absolute;
