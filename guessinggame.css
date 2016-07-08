@@ -24,12 +24,13 @@ section {
   margin: -5vh auto 1vh auto; 
   font-size: 8vw; 
   padding: 1vw; 
-  background: #F4DECB;
+  background: #F8EEE7;
   border: 1px solid #49274A; 
 }
 h6, #playerMessage {
   font-size: 25px; 
   margin-top: 5vh;
+
 }
 #playerMessage {
   text-align: left; 

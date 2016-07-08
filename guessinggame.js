@@ -2,7 +2,8 @@ $(document).ready(function(){
 	var winningNumber; 
 	var playerGuess; 
 	var guessesremaining = 10; 
-	var previouslyGuessedNumbers = []; 
+	var previouslyGuessedNumbers = [];
+	var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend'; 
 	function createNewWinningNumber(){
 		winningNumber = Math.ceil(Math.random()*100); 
 	}
@@ -31,21 +32,30 @@ $(document).ready(function(){
 	}
 	function checkGuess(){
 		if (winningNumber === playerGuess){
-			$("#playerAlert").text("Congratulations! \n I was thinking of "+ winningNumber +"!"); 
 			$("#playerMessage").empty(); 
+			$("#playerAlert").text("Congratulations! \n I was thinking of "+ winningNumber +"!"); 
+			$("#playerAlert").addClass("animated rubberBand").one(animationEnd, function() {
+            	$("#playerAlert").removeClass('animated rubberBand');
+            	$("#restart").click(); 
+        	}); 
+			
 		} else {
 			if (previouslyGuessedNumbers.includes(playerGuess)){
 				$("#playerMessage").empty(); 
 				$("#playerAlert").text("You have already guessed "+ playerGuess+". "); 
 				$("#playerMessage").append(guessesremaining+" Guesses remaining."); 
 			} else{
-				guessesremaining --; 
-				previouslyGuessedNumbers.push(playerGuess); 
-				$("#playerAlert").empty(); 
-				$("#playerMessage").empty(); 
-				$("#playerMessage").append("<li>"+lowerOrHigher()+"</li>");
-				$("#playerMessage").append("<li>"+distanceFromWin()+"</li>"); 
-				$("#playerMessage").append("<li>"+guessesremaining+" Guesses remaining.</li>");
+				if (guessesremaining === 0){
+					loser(); 
+				} else {
+					guessesremaining --; 
+					previouslyGuessedNumbers.push(playerGuess); 
+					$("#playerAlert").empty(); 
+					$("#playerMessage").empty(); 
+					$("#playerMessage").append("<li>"+lowerOrHigher()+"</li>");
+					$("#playerMessage").append("<li>"+distanceFromWin()+"</li>"); 
+					$("#playerMessage").append("<li>"+guessesremaining+" Guesses remaining.</li>");
+				}
 			}
 		}
 	}
@@ -65,6 +75,14 @@ $(document).ready(function(){
 		var randIndex = Math.floor(Math.random()*possibilities.length); 
 		possibilities[randIndex] = winningNumber; 
 		return possibilities; 
+	}
+	function loser(){
+		$("#playerMessage").empty(); 
+		$("#playerAlert").text("You lose."); 
+		$("#playerAlert").addClass("animated hinge").one(animationEnd, function() {
+            $("#playerAlert").removeClass('animated hinge');
+            $("#restart").click(); 
+       }); 
 	}
 	//Here we start actually calling functions 
 	createNewWinningNumber(); 
@@ -96,6 +114,7 @@ $(document).ready(function(){
 		$("#hintWindow").slideUp(); 
 		$("#hintList").empty(); 
 		possibilities = []; 
+		previouslyGuessedNumbers = [];
 		$("#hintButton").prop("disabled", false);
 	}); 
 
